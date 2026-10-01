@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Botão Legends — Futebol de Mesa</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="top">
+
+    <div class="logo">
+        BOTÃO <span>LEGENDS</span> ⚽
+    </div>
+
+    <div class="actions">
+
+        <button
+            class="btn"
+            id="themeBtn">
+            🌙 Modo escuro
+        </button>
+
+        <button
+            class="btn"
+            id="soundBtn">
+            🔊 Som
+        </button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- =========================
+         APRESENTAÇÃO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="card">
+
+            <h1>
+                Futebol de botão,
+                <span>do seu jeito.</span>
+            </h1>
+
+            <p>
+                Um campeonato rápido e interativo.
+                Escolha seu clube, mire e chute
+                para tentar conquistar o título.
+            </p>
+
+
+            <div class="setup">
+
+                <div class="field">
+
+                    <label>
+                        SEU TIME
+                    </label>
+
+                    <select id="teamSelect">
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        MODO
+                    </label>
+
+                    <select id="modeSelect">
+
+                        <option value="cpu">
+                            Você × IA
+                        </option>
+
+                        <option value="local">
+                            2 jogadores locais
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="btn primary"
+                    id="startBtn">
+
+                    ▶ Iniciar campeonato
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <b>12</b>
+
+                    times
+
+                </div>
+
+
+                <div class="stat">
+
+                    <b>4:00</b>
+
+                    máximo
+
+                </div>
+
+
+                <div class="stat">
+
+                    <b>∞</b>
+
+                    replays
+
+                </div>
+
+            </div>
+
+
+            <p class="description">
+
+                Formato:
+
+                12 clubes →
+
+                preliminar →
+
+                quartas →
+
+                semifinais →
+
+                final.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <div class="tabs">
+
+        <button
+            class="tab active"
+            data-tab="game">
+
+            🎮 Partida
+
+        </button>
+
+
+        <button
+            class="tab"
+            data-tab="bracket">
+
+            🏆 Mata-mata
+
+        </button>
+
+
+        <button
+            class="tab"
+            data-tab="teams">
+
+            🧩 Times
+
+        </button>
+
+
+        <button
+            class="tab"
+            data-tab="rules">
+
+            📖 Como jogar
+
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         JOGO
+    ========================== -->
+
+    <section id="gameTab">
+
+        <div
+            id="gameArea"
+            style="display:none">
+
+            <div class="card">
+
+                <div class="scorebar">
+
+                    <div class="teamScore">
+
+                        <div
+                            class="name"
+                            id="homeName">
+
+                            Casa
+
+                        </div>
+
+                        <div
+                            class="score"
+                            id="homeScore">
+
+                            0
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="clock">
+
+                        <strong id="clock">
+                            4:00
+                        </strong>
+
+                        <div
+                            class="turn"
+                            id="turnText">
+
+                            Sua vez
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="teamScore">
+
+                        <div
+                            class="name"
+                            id="awayName">
+
+                            Visitante
+
+                        </div>
+
+                        <div
+                            class="score"
+                            id="awayScore">
+
+                            0
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAMPO -->
+
+                <div id="fieldWrap">
+
+                    <div
+                        class="field"
+                        id="field">
+
+                        <div
+                            class="line mid">
+                        </div>
+
+
+                        <div
+                            class="circle">
+                        </div>
+
+
+                        <div
+                            class="dot">
+                        </div>
+
+
+                        <div
+                            class="box l">
+                        </div>
+
+
+                        <div
+                            class="box r">
+                        </div>
+
+
+                        <div
+                            class="goal l">
+                        </div>
+
+
+                        <div
+                            class="goal r">
+                        </div>
+
+
+                        <div
+                            class="aim"
+                            id="aim">
+                        </div>
+
+
+                        <div
+                            class="ball"
+                            id="ball">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hint">
+
+                    Arraste um botão da sua cor
+                    para mirar e solte para chutar.
+
+                </div>
+
+
+                <div class="controls">
+
+                    <button
+                        class="btn primary"
+                        id="pauseBtn">
+
+                        ⏸ Pausar
+
+                    </button>
+
+
+                    <button
+                        class="btn"
+                        id="restartMatchBtn">
+
+                        ↻ Reiniciar
+
+                    </button>
+
+
+                    <button
+                        class="btn warn"
+                        id="forfeitBtn">
+
+                        🏳 Encerrar
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TELA INICIAL -->
+
+        <div
+            id="welcome"
+            class="card">
+
+            <h2>
+                Seu campeonato começa aqui.
+            </h2>
+
+            <p>
+
+                Escolha seu time acima e clique
+                em "Iniciar campeonato".
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CHAVE
+    ========================== -->
+
+    <section
+        id="bracketTab"
+        style="display:none">
+
+        <div class="card">
+
+            <h2>
+                🏆 Chave do torneio
+            </h2>
+
+            <div
+                class="bracket"
+                id="bracket">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TIMES
+    ========================== -->
+
+    <section
+        id="teamsTab"
+        style="display:none">
+
+        <div class="card">
+
+            <h2>
+                🧩 Os 12 clubes
+            </h2>
+
+            <div
+                class="teamsGrid"
+                id="teamsGrid">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         REGRAS
+    ========================== -->
+
+    <section
+        id="rulesTab"
+        style="display:none">
+
+        <div class="card">
+
+            <h2>
+                📖 Como jogar
+            </h2>
+
+
+            <div class="help">
+
+                <div>
+
+                    <b>1. Escolha</b>
+
+                    <br>
+
+                    Selecione um dos 12 clubes.
+
+                </div>
+
+
+                <div>
+
+                    <b>2. Mire</b>
+
+                    <br>
+
+                    Arraste um botão da sua cor.
+
+                </div>
+
+
+                <div>
+
+                    <b>3. Solte</b>
+
+                    <br>
+
+                    Solte para realizar o chute.
+
+                </div>
+
+
+                <div>
+
+                    <b>4. Gol</b>
+
+                    <br>
+
+                    Faça mais gols antes dos 4 minutos.
+
+                </div>
+
+
+                <div>
+
+                    <b>5. Mata-mata</b>
+
+                    <br>
+
+                    Vença para avançar.
+
+                </div>
+
+
+                <div>
+
+                    <b>6. Acessibilidade</b>
+
+                    <br>
+
+                    Funciona com mouse e toque.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     MODAL
+========================== -->
+
+<div
+    class="overlay"
+    id="modal">
+
+    <div class="modal">
+
+        <div
+            class="trophy"
+            id="modalIcon">
+
+            🏆
+
+        </div>
+
+
+        <h2 id="modalTitle">
+            Fim de jogo
+        </h2>
+
+
+        <p id="modalText">
+        </p>
+
+
+        <button
+            class="btn primary"
+            id="modalBtn">
+
+            Continuar
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- NOTIFICAÇÃO -->
+
+<div
+    class="toast"
+    id="toast">
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

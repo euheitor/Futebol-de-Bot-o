@@ -1,0 +1,1299 @@
+:root {
+
+    --bg: #07130d;
+
+    --panel: #0e2117;
+
+    --panel2: #14301f;
+
+    --text: #f5fff7;
+
+    --muted: #a9c3af;
+
+    --accent: #55e68a;
+
+    --line: #d9f5df;
+
+    --danger: #ff6374;
+
+    --gold: #ffd166;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Inter,
+        system-ui,
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #143622 0,
+            #07130d 48%,
+            #040a07 100%
+        );
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+button,
+input,
+select {
+
+    font: inherit;
+
+}
+
+
+button {
+
+    cursor: pointer;
+
+}
+
+
+.btn {
+
+    border: 1px solid #2c5138;
+
+    background: var(--panel);
+
+    color: var(--text);
+
+    padding: 10px 14px;
+
+    border-radius: 12px;
+
+    font-weight: 700;
+
+    transition: .2s;
+
+}
+
+
+.btn:hover {
+
+    transform: translateY(-1px);
+
+    border-color: var(--accent);
+
+}
+
+
+.btn.primary {
+
+    background: var(--accent);
+
+    color: #05200e;
+
+    border-color: var(--accent);
+
+}
+
+
+.btn.warn {
+
+    background: #392a08;
+
+    border-color: #725b17;
+
+    color: #ffe7a0;
+
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.top {
+
+    padding: 18px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+}
+
+
+.logo {
+
+    font-size:
+        clamp(
+            22px,
+            3vw,
+            34px
+        );
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+
+}
+
+
+.logo span {
+
+    color: var(--accent);
+
+}
+
+
+.actions {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+main {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding:
+        0 20px 30px;
+
+}
+
+
+.hero {
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr .8fr;
+
+    gap: 18px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.card {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,48,31,.96),
+            rgba(9,25,16,.96)
+        );
+
+    border:
+        1px solid #234a31;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 12px 35px #0005;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero h1 {
+
+    margin:
+        0 0 8px;
+
+    font-size:
+        clamp(
+            28px,
+            5vw,
+            52px
+        );
+
+    line-height: 1;
+
+}
+
+
+.hero h1 span {
+
+    color: var(--accent);
+
+}
+
+
+.hero p {
+
+    color: var(--muted);
+
+    margin: 0;
+
+    max-width: 800px;
+
+}
+
+
+.description {
+
+    margin-top: 13px;
+
+    font-size: 13px;
+
+    color: var(--muted);
+
+}
+
+
+/* =========================
+   CONFIGURAÇÃO
+========================= */
+
+.setup {
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    align-items: end;
+
+    margin-top: 18px;
+
+}
+
+
+.field {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    flex: 1;
+
+    min-width: 180px;
+
+}
+
+
+.field label {
+
+    font-size: 12px;
+
+    color: var(--muted);
+
+}
+
+
+select,
+input {
+
+    background: #07130d;
+
+    color: var(--text);
+
+    border:
+        1px solid #31583e;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+}
+
+
+/* =========================
+   ESTATÍSTICAS
+========================= */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+}
+
+
+.stat {
+
+    background: #091910;
+
+    border-radius: 14px;
+
+    padding: 14px;
+
+    text-align: center;
+
+}
+
+
+.stat b {
+
+    display: block;
+
+    font-size: 24px;
+
+    color: var(--accent);
+
+}
+
+
+/* =========================
+   ABAS
+========================= */
+
+.tabs {
+
+    display: flex;
+
+    gap: 8px;
+
+    margin: 18px 0;
+
+    overflow: auto;
+
+}
+
+
+.tab {
+
+    padding:
+        10px 14px;
+
+    border-radius: 999px;
+
+    border:
+        1px solid #31583e;
+
+    background: #0a1a10;
+
+    color: var(--muted);
+
+    white-space: nowrap;
+
+}
+
+
+.tab.active {
+
+    background: var(--accent);
+
+    color: #06200f;
+
+    font-weight: 900;
+
+}
+
+
+/* =========================
+   PLACAR
+========================= */
+
+.scorebar {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr auto 1fr;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+
+}
+
+
+.teamScore {
+
+    text-align: center;
+
+}
+
+
+.teamScore .name {
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+}
+
+
+.teamScore .score {
+
+    font-size: 48px;
+
+    font-weight: 950;
+
+    line-height: 1;
+
+}
+
+
+/* =========================
+   CRONÔMETRO
+========================= */
+
+.clock {
+
+    text-align: center;
+
+    background: #06100a;
+
+    border:
+        1px solid #35563f;
+
+    border-radius: 14px;
+
+    padding: 10px 15px;
+
+    min-width: 105px;
+
+}
+
+
+.clock strong {
+
+    font-size: 25px;
+
+}
+
+
+.turn {
+
+    font-size: 12px;
+
+    color: var(--muted);
+
+    margin-top: 3px;
+
+}
+
+
+/* =========================
+   CAMPO
+========================= */
+
+#fieldWrap {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+.field {
+
+    position: relative;
+
+    width:
+        min(
+            100%,
+            980px
+        );
+
+    aspect-ratio: 1.72;
+
+    background: #19703c;
+
+    border:
+        6px solid #e8fff0;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 50px #0008;
+
+    touch-action: none;
+
+}
+
+
+.field::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #19703c 0,
+            #19703c 9%,
+            #1b7741 9%,
+            #1b7741 18%
+        );
+
+    opacity: .55;
+
+}
+
+
+/* =========================
+   LINHAS DO CAMPO
+========================= */
+
+.line {
+
+    position: absolute;
+
+    z-index: 1;
+
+    background: #e8fff0;
+
+}
+
+
+.mid {
+
+    left: 50%;
+
+    top: 0;
+
+    width: 3px;
+
+    height: 100%;
+
+}
+
+
+.circle {
+
+    position: absolute;
+
+    z-index: 1;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 17%;
+
+    aspect-ratio: 1;
+
+    border:
+        3px solid #e8fff0;
+
+    border-radius: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+}
+
+
+.dot {
+
+    position: absolute;
+
+    z-index: 1;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 9px;
+
+    height: 9px;
+
+    background: #e8fff0;
+
+    border-radius: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+}
+
+
+/* =========================
+   ÁREAS
+========================= */
+
+.box {
+
+    position: absolute;
+
+    z-index: 1;
+
+    top: 26%;
+
+    height: 48%;
+
+    width: 15%;
+
+    border:
+        3px solid #e8fff0;
+
+}
+
+
+.box.l {
+
+    left: -1px;
+
+    border-left: 0;
+
+}
+
+
+.box.r {
+
+    right: -1px;
+
+    border-right: 0;
+
+}
+
+
+/* =========================
+   GOLS
+========================= */
+
+.goal {
+
+    position: absolute;
+
+    z-index: 2;
+
+    top: 39%;
+
+    height: 22%;
+
+    width: 2.5%;
+
+    border:
+        4px solid white;
+
+    background: #ffffff22;
+
+}
+
+
+.goal.l {
+
+    left: -4px;
+
+    border-left: 0;
+
+}
+
+
+.goal.r {
+
+    right: -4px;
+
+    border-right: 0;
+
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.disc {
+
+    position: absolute;
+
+    z-index: 5;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border-radius: 50%;
+
+    width:
+        clamp(
+            27px,
+            4vw,
+            43px
+        );
+
+    aspect-ratio: 1;
+
+    border:
+        3px solid white;
+
+    box-shadow:
+        0 5px 9px #0008;
+
+    user-select: none;
+
+}
+
+
+.disc::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 25%;
+
+    border-radius: 50%;
+
+    background:
+        #ffffff33;
+
+}
+
+
+/* =========================
+   BOLA
+========================= */
+
+.ball {
+
+    position: absolute;
+
+    z-index: 5;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border-radius: 50%;
+
+    width:
+        clamp(
+            14px,
+            2vw,
+            20px
+        );
+
+    aspect-ratio: 1;
+
+    background: white;
+
+    border:
+        2px solid #111;
+
+    box-shadow:
+        0 3px 6px #0009;
+
+}
+
+
+/* =========================
+   LINHA DE MIRA
+========================= */
+
+.aim {
+
+    position: absolute;
+
+    z-index: 8;
+
+    height: 3px;
+
+    background:
+        var(--gold);
+
+    transform-origin: left center;
+
+    pointer-events: none;
+
+    display: none;
+
+    border-radius: 3px;
+
+}
+
+
+/* =========================
+   CONTROLES
+========================= */
+
+.hint {
+
+    color: var(--muted);
+
+    text-align: center;
+
+    font-size: 13px;
+
+    margin: 10px;
+
+}
+
+
+.controls {
+
+    display: flex;
+
+    gap: 8px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    margin-top: 12px;
+
+}
+
+
+/* =========================
+   AJUDA
+========================= */
+
+.help {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 16px;
+
+}
+
+
+.help div {
+
+    padding: 12px;
+
+    border:
+        1px solid #234a31;
+
+    border-radius: 13px;
+
+    background: #0a1a10;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+}
+
+
+.help b {
+
+    color: var(--text);
+
+}
+
+
+/* =========================
+   CHAVE
+========================= */
+
+.bracket {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+
+    overflow: auto;
+
+    padding-bottom: 8px;
+
+}
+
+
+.round {
+
+    min-width: 240px;
+
+}
+
+
+.round h3 {
+
+    margin:
+        0 0 9px;
+
+    color: var(--accent);
+
+}
+
+
+.match {
+
+    background: #0b1a11;
+
+    border:
+        1px solid #294b35;
+
+    border-radius: 12px;
+
+    padding: 9px;
+
+    margin: 10px 0;
+
+}
+
+
+.match .row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 4px;
+
+    border-radius: 7px;
+
+}
+
+
+.match .winner {
+
+    background: #193923;
+
+    color: white;
+
+}
+
+
+/* =========================
+   TIMES
+========================= */
+
+.teamsGrid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                180px,
+                1fr
+            )
+        );
+
+    gap: 10px;
+
+}
+
+
+.teamCard {
+
+    padding: 15px;
+
+    border:
+        1px solid #294b35;
+
+    background: #0a1a10;
+
+    border-radius: 15px;
+
+}
+
+
+.teamCard small {
+
+    color: var(--muted);
+
+}
+
+
+.badge {
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+
+    margin-right: 7px;
+
+    vertical-align: middle;
+
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: #000b;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 50;
+
+    padding: 20px;
+
+}
+
+
+.modal {
+
+    max-width: 520px;
+
+    width: 100%;
+
+    background: #0e2117;
+
+    border:
+        1px solid #3c6548;
+
+    border-radius: 22px;
+
+    padding: 24px;
+
+    text-align: center;
+
+    box-shadow:
+        0 30px 80px #000;
+
+}
+
+
+.modal h2 {
+
+    font-size: 34px;
+
+    margin: 5px 0;
+
+}
+
+
+.modal p {
+
+    color: var(--muted);
+
+}
+
+
+.trophy {
+
+    font-size: 58px;
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+
+    position: fixed;
+
+    right: 18px;
+
+    bottom: 18px;
+
+    background: #effff3;
+
+    color: #082012;
+
+    padding: 13px 16px;
+
+    border-radius: 12px;
+
+    font-weight: 800;
+
+    transform:
+        translateY(130px);
+
+    transition: .3s;
+
+    z-index: 80;
+
+}
+
+
+.toast.show {
+
+    transform: none;
+
+}
+
+
+/* =========================
+   MODO CLARO
+========================= */
+
+body.light {
+
+    --bg: #eef7f0;
+
+    --panel: #ffffff;
+
+    --panel2: #e6f3e9;
+
+    --text: #122018;
+
+    --muted: #526458;
+
+    --line: #ffffff;
+
+    background: #eef7f0;
+
+    color: var(--text);
+
+}
+
+
+body.light .card {
+
+    background: #ffffff;
+
+    border-color: #c7ddcc;
+
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 850px) {
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .help {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .teamScore .name {
+
+        font-size: 14px;
+
+    }
+
+
+    .teamScore .score {
+
+        font-size: 36px;
+
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    main {
+
+        padding:
+            0 10px 20px;
+
+    }
+
+
+    .top {
+
+        padding:
+            12px 10px;
+
+    }
+
+
+    .card {
+
+        padding: 14px;
+
+    }
+
+
+    .field {
+
+        border-width: 4px;
+
+    }
+
+
+    .setup .field {
+
+        min-width: 100%;
+
+    }
+
+}
